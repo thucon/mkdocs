@@ -1,0 +1,22 @@
+{
+	"name": "pirate devcontainer",
+	"build": {
+		"dockerfile": "dockerfile"
+	},
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-python.python",
+				"mhutchie.git-graph",
+				"donjayamanne.githistory"
+			]
+		}
+	},
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+}
